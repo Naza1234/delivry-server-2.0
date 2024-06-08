@@ -18,6 +18,7 @@ app.use("/image", express.static("./image"));
 const shipmentRoutes = require('./routes/shipment.routes');
 const shipmentPackageRoutes = require('./routes/shipmentPackage.routes');
 const shipmentRatingRoutes = require('./routes/shipmentRating.routes');
+const admin = require('./routes/admin.routes');
 
 
 
@@ -25,6 +26,7 @@ const shipmentRatingRoutes = require('./routes/shipmentRating.routes');
 app.use('/shipment', shipmentRoutes);
 app.use('/shipmentPackage', shipmentPackageRoutes);
 app.use('/shipmentRating', shipmentRatingRoutes);
+app.use('/admin', admin);
 
 
 
