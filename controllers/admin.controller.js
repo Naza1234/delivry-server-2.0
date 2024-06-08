@@ -16,6 +16,26 @@ exports.createAdmin = async (req, res) => {
     }
 };
 
+exports.loginAdmin = async (req, res) => {
+    try {
+        // Find the admin by username
+        const admin = await Admin.findOne({ userName: req.body.name });
+        if (!admin) {
+            return res.status(404).json({ message: 'Admin not found' });
+        }
+
+        // Compare the provided password with the stored password
+        if (req.body.password !== admin.userPassword) {
+            return res.status(401).json({ message: 'Invalid password' });
+        }
+
+        // Respond with the admin details
+        res.json({ admin });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 // Get all shipment packages
 exports.getAllAdmins = async (req, res) => {
     try {
