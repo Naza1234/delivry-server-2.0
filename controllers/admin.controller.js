@@ -30,7 +30,7 @@ exports.loginAdmin = async (req, res) => {
         }
 
         // Respond with the admin details
-        res.json({ admin._id });
+        res.json( admin._id );
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
