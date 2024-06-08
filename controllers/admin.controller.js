@@ -3,13 +3,12 @@ const Admin = require('../models/admin.model');
 // Create a shipment package
 exports.createAdmin = async (req, res) => {
     try {
-        const Admin = new Admin({
-            userName:req.body.name,
-            
+        const admin = new Admin({
+            userName:req.body.name,  
             userPassword:req.body.password,  
         });
 
-        const savedAdmin = await Admin.save();
+        const savedAdmin = await admin.save();
         res.json(savedAdmin);
     } catch (error) {
         res.status(500).json({ message: error.message });
