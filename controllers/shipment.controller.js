@@ -27,6 +27,7 @@ exports.createShipment = async (req, res) => {
 // Find a shipment by trackingId
 exports.findShipmentByTrackingId = async (req, res) => {
     try {
+        const trackingId = req.params.trackingId;
         const shipment = await Shipment.findOne({ trackingId: new RegExp(`^${trackingId}$`, 'i') });
         res.json(shipment);
     } catch (error) {
