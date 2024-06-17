@@ -58,7 +58,11 @@ exports.deleteOneShipmentPackageById = async (req, res) => {
 // Update one shipment package by id
 exports.updateOneShipmentPackageById = async (req, res) => {
     try {
-        const updatedShipmentPackage = await ShipmentPackage.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedShipment = await Shipment.findOneAndUpdate(
+            { shipmentId: req.params.id },
+            req.body,
+            { new: true, runValidators: true }
+        );
         res.json(updatedShipmentPackage);
     } catch (error) {
         res.status(500).json({ message: error.message });
