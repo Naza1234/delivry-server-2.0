@@ -7,6 +7,9 @@ const shipmentPackageSchema = new mongoose.Schema({
     },
     productName: String,
     productWeight:String,
+    BookingMode:String,
+    PostingDate:String,
+    ConsignmentNo:String,
     productSize: String
 },{
     timestamps: true
