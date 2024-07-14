@@ -6,6 +6,7 @@ const shipmentPackageSchema = new mongoose.Schema({
         ref: 'Shipment'
     },
     productName: String,
+    productDescription: String,
     productWeight:String,
     BookingMode:String,
     PostingDate:String,
