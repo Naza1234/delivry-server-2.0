@@ -14,7 +14,7 @@ exports.createShipment = async (req, res) => {
         const shipment = new Shipment({
             from: req.body.from,
             to: req.body.to,
-            trackingId: req.body.trackingId
+            trackingId: trackingId
         });
 
         const savedShipment = await shipment.save();

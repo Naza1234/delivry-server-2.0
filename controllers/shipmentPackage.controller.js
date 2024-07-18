@@ -7,6 +7,7 @@ exports.createShipmentPackage = async (req, res) => {
             shipmentId: req.body.shipmentId,
             productName: req.body.productName,
             productWeight: req.body.productWeight,
+            productDescription:req.body.productDescription,
             BookingMode: req.body.BookingMode,
             PostingDate: req.body.PostingDate,
             ConsignmentNo: req.body.ConsignmentNo,
